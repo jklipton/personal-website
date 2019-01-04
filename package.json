@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-forty-v2",
-  "description": "Gatsby Starter - Forty V2",
+  "name": "live-portfolio",
+  "description": "Jen Lipton's personal portfolio and blog site, based on Hunter Chang's Gatsby Starter: Forty V2",
   "version": "1.0.0",
-  "author": "Hunter Chang",
+  "author": "Jennifer Lipton",
   "dependencies": {
     "gatsby": "^2.0.76",
     "gatsby-plugin-manifest": "^2.0.9",

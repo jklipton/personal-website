@@ -7,10 +7,11 @@ const Banner = (props) => (
                 <h1>Hi, I'm Jen Lipton</h1>
             </header>
             <div className="content">
-                <p>A responsive site template designed by HTML5 UP<br />
-                and released under the Creative Commons.</p>
+                <p>A user-first Android and Web developer,<br />
+                steeped in science, design, and customer-service.</p>
                 <ul className="actions">
-                    <li><a href="#one" className="button next scrolly">Get Started</a></li>
+                    <li><a href="#one" className="button next scrolly">See my Resume</a></li>
+                    {/* TODO: link to resume, obviously */}
                 </ul>
             </div>
         </div>
