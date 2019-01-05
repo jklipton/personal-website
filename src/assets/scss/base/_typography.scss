@@ -5,6 +5,8 @@
 ///
 
 @include font-face("Mopster", "../fonts/Mopster-Regular", null, null, otf);
+@include font-face("Adams", "../fonts/Adamas-Regular", null, null, otf);
+
 
 /* Type */
 
@@ -75,7 +77,10 @@
 
 	h1 {
 		font-family: 'Mopster', cursive;
+		text-transform: uppercase;
 		font-size: 2.5em;
+		font-weight: 200 !important;
+		width: unset !important;
 	}
 
 	h2 {
