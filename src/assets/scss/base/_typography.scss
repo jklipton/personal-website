@@ -179,3 +179,23 @@
 	.align-right {
 		text-align: right;
 	}
+	
+	.eg:hover, .easter-egg {
+		color: #b341cf;
+		cursor: pointer;
+	}
+
+	.detail {
+		position: relative;
+		font-size: 0.8em;
+		font-weight: _font(weight-bold);
+		letter-spacing: _font(letter-spacing-alt);
+		line-height: 3.5em;
+		padding: 0 1.75em;
+		text-transform: uppercase;
+		border: 0;
+
+		&:hover {
+			box-shadow: inset 0 0 0 2px _palette(highlight);
+		}
+	}

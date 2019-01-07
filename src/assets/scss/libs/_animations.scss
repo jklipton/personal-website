@@ -1,0 +1,33 @@
+
+.fade-in {
+    @include vendor('transition', (
+			'background-color #{_duration(transition)} ease-in-out',
+			'box-shadow #{_duration(transition)} ease-in-out',
+			'color #{_duration(transition)} ease-in-out'
+		));
+}
+
+.slide-in {
+	display: block;
+	overflow: hidden; /* Ensures the content is not revealed until the animation */
+	white-space: nowrap; /* Keeps the content on a single line */
+	letter-spacing: .15em; /* Adjust as needed */
+	width: 0%;
+	animation: 
+	  typing 3.5s 3s forwards
+}
+
+@keyframes typing {
+	from { width: 0 }
+	to { width: 100% }
+  }
+
+.easter-egg {
+	animation: 
+	flashing .8s steps(2) infinite
+}
+
+@keyframes flashing {
+	from { 	text-shadow: #FC0 -1px -1px 0px, #FC0 1px 1px 0px;	}
+	to { 	text-shadow: none;	}
+  }

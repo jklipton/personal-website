@@ -23,4 +23,14 @@
 			background-color: transparent;
 			border-bottom: solid 1px _palette(border);
 		}
+
+		#two {
+			height: 5em;
+
+			a {
+				margin: 2em auto;
+				display: block;
+				width: fit-content;
+			}
+		}
 	}
