@@ -1,3 +1,11 @@
+
+const TweenComponent = () => (
+    <Tween from={{ x: '100px', rotation: -360 }}>
+      <div>This element gets tweened</div>
+    </Tween>
+  );
+
+
 import Typing from 'react-typing-animation';
 import React, { Component } from 'react';
 import { Tween, Timeline } from 'react-gsap';
@@ -18,24 +26,48 @@ import { Tween, Timeline } from 'react-gsap';
 // export default Typed;
 
 
-const TextBlock = ( color ) => (<span className="text-block" style={{ backgroundColor: `${color}` }}/>);
-
-const TweenComponent = () => (
-    <Tween from={{ x: '100px', rotation: -360 }}>
-      <div>This element gets tweened</div>
-    </Tween>
-  );
-
+const ColorBlock = ( color ) => (<span className="color-block" style={{ backgroundColor: `${color}` }}/>);
+const TextBlock = ( string ) => (<span className="word">{string}</span>);
 
 const IAm = () => (
+    <span className="first gsap">
+      <Timeline
+        target={
+          TextBlock('I am')
+        }
+        delay={1}>
+        <Tween to={{ opacity: 1 }} duration={1}/>
+      </Timeline>
+      <Timeline
+        target={
+          ColorBlock('#FFFFFF')
+        }
+        delay={1}>
+        <Tween to={{ scaleX: 1 }} duration={1}/>
+        <Tween to={{ scaleX: 0 }} duration={1}/>
+      </Timeline>
+    </span>
+  );
+
+const aDeveloper = () => (
+  <span className="first gsap">
     <Timeline
       target={
-        TextBlock('#FFFFFF')
+        TextBlock('I am')
       }
-    >
-      <Tween to={{ scaleX: 1 }} duration={2}/>
+      delay={1}>
+      <Tween to={{ opacity: 1 }} duration={1}/>
     </Timeline>
-  );
+    <Timeline
+      target={
+        ColorBlock('#FFFFFF')
+      }
+      delay={1}>
+      <Tween to={{ scaleX: 1 }} duration={1}/>
+      <Tween to={{ scaleX: 0 }} duration={1}/>
+    </Timeline>
+  </span>
+);
 
 const Typed = () => (
     <h1 className="typed">

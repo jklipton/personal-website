@@ -5,7 +5,6 @@ import Layout from '../components/Layout'
 import Banner from '../components/Banner'
 import BlogTiles from '../components/BlogTiles'
 import Puppies from '../components/Puppies';
-import PageTransition from 'gatsby-plugin-page-transitions';
 
 class HomeIndex extends React.Component {
 
