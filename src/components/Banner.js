@@ -1,25 +1,22 @@
-import React, { Component } from 'react'
-import Typing from 'react-typing-animation';
+import React from 'react'
+import Typed from './Typed'
 
 const Banner = (props) => (
     <section id="banner" className="major">
         <div className="inner">
             <header className="major">
-            <Typing speed={80} startDelay={1500}>
-                <h1 className="typed">I am a developer
-                <Typing.Backspace count={9} delay={300} />
-                {'designer'}
-                <Typing.Backspace count={10} delay={300} />
-                <Typing.Delay ms={500}/> 
-                {' Jen Lipton.'}</h1>
-            </Typing>
+                <Typed/>
             </header>
             <div className="content">
                 <p>A user-first Android and Web developer,<br />
-                <span className="eg" onClick={(e) => handleEG(e)}>steeped</span> in science, design, and customer-service.</p>
+                    <span className="em tea" onClick={(e) => handleEmoji(e)}>steeped</span>{' in '} 
+                    <span className="em sci" onClick={(e) => handleEmoji(e)}>science</span>{', '}
+                    <span className="em des" onClick={(e) => handleEmoji(e)}>design</span>{', and '}
+                    <span className="em cus" onClick={(e) => handleEmoji(e)}>customer service</span>.
+                </p>
                 <ul className="actions">
-                    <li><a href="#one" className="button next scrolly slide-in">
-                        <span className="fade-in slide-in">See my Resume</span>
+                    <li><a href="#one" className="button next scrolly slide-open">
+                        <span className="fade-in slide-open">See my Resume</span>
                     </a></li>
                     {/* TODO: link to resume, obviously */}
                 </ul>
@@ -28,8 +25,21 @@ const Banner = (props) => (
     </section>
 );
 
-function handleEG({ target }){
-    target.classList.add('easter-egg')
+function handleEmoji({ target }){
+    switch(target.classList[1]){
+        case "tea": 
+            target.classList.add('tea-now')
+            break;
+        case "sci":
+            target.classList.add('sci-now')
+            break;
+        case "des":
+            target.classList.add('des-now')
+            break;
+        case "cus":
+            target.classList.add('cus-now')
+            break;
+    }
 }
 
 export default Banner

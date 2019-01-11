@@ -17,10 +17,8 @@
 		background-size: cover;
 		border-bottom: 0 !important;
 		cursor: default;
-		height: 60vh;
+		height: 100vh;
 		margin-bottom: -3.25em;
-		max-height: 32em;
-		min-height: 22em;
 		position: relative;
 		top: -3.25em;
 
@@ -91,15 +89,31 @@
 					font-weight: _font(weight-bold);
 					letter-spacing: _font(letter-spacing-alt);
 					text-transform: uppercase;
+
+					& .em { 
+						display: inline-block;
+						white-space: nowrap;
+					  
+						&:hover {
+							cursor: pointer;
+
+							&.tea { color: #FFD6BA; }
+							&.sci { color: #8CC084; } //#ABDF75;
+							&.des { color: #C49BBB; }
+							&.cus { color: #86BBD8; }
+						}
+						
+						&.tea-now {
+							overflow: hidden;
+							animation: text-collapse 1.8s forwards
+						}
+					}
+
 				}
 			}
 		}
 
 		&.major {
-			height: 75vh;
-			min-height: 30em;
-			max-height: 50em;
-
 			&.alt {
 				opacity: 0.75;
 			}
@@ -124,16 +138,31 @@
 			}
 		}
 
+		.typed {
+			background-color: blue;
+
+			& .text-block{
+				display: block;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+				z-index: 100;
+				transform-origin: left;
+				transform: scaleX(0);
+			}
+		}
+
 		@include breakpoint(large) {
 			background-attachment: scroll;
 		}
 
 		@include breakpoint(small) {
 			@include padding(3em, 0, (2em, 0, 0, 0));
-			height: auto;
+			height: 50vh;
 			margin-bottom: -2.75em;
-			max-height: none;
-			min-height: 0;
+			min-height: 40em;
 			top: -2.75em;
 
 			h1 {
@@ -149,12 +178,6 @@
 						margin-bottom: _size(element-margin);
 					}
 				}
-			}
-
-			&.major {
-				height: auto;
-				min-height: 0;
-				max-height: none;
 			}
 		}
 

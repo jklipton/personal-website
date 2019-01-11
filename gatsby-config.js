@@ -5,6 +5,7 @@ module.exports = {
     description: "Home page for Jen Lipton, developer, containing information on her work, talks, and articles"
   },
   plugins: [
+    'gatsby-plugin-page-transitions',
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-manifest`,

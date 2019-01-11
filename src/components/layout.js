@@ -1,11 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-
-import '../assets/scss/main.scss'
 import Header from './Header'
 import Menu from './Menu'
-import Contact from './Contact'
 import Footer from './Footer'
+
+import '../assets/scss/main.scss'
 
 class Layout extends React.Component {
     constructor(props) {
@@ -43,7 +41,6 @@ class Layout extends React.Component {
                 <div id="wrapper">
                     <Header onToggleMenu={this.handleToggleMenu} />
                     {children}
-                    <Contact />
                     <Footer />
                 </div>
                 <Menu onToggleMenu={this.handleToggleMenu} />
@@ -53,3 +50,5 @@ class Layout extends React.Component {
 }
 
 export default Layout
+
+//TODO: Refactor to match pattern

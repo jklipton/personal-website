@@ -29,7 +29,7 @@ export default function BlogTiles() {
               }
           }`}
           render={ ({ allMarkdownRemark }) => (
-            <section id="one" className="tiles">
+            <section id="one" className="tiles transition-slide">
                     { allMarkdownRemark.edges.map(({ node }, i) => {
                         return (
                             <article key={i} style={{backgroundImage: `url(${node.frontmatter.tilePic.childImageSharp.sizes.src})`}}>

@@ -7,27 +7,42 @@
 		));
 }
 
-.slide-in {
+.slide-open {
 	display: block;
 	overflow: hidden; /* Ensures the content is not revealed until the animation */
 	white-space: nowrap; /* Keeps the content on a single line */
 	letter-spacing: .15em; /* Adjust as needed */
 	width: 0%;
 	animation: 
-	  typing 3.5s 3s forwards
+	  slide-open 3.5s 3.5s forwards
 }
 
-@keyframes typing {
+@keyframes slide-open {
 	from { width: 0 }
 	to { width: 100% }
-  }
-
-.easter-egg {
-	animation: 
-	flashing .8s steps(2) infinite
+}
+	
+.transition-slide {
+	position: relative;
+	animation: slide-in 1.8s forwards
 }
 
-@keyframes flashing {
-	from { 	text-shadow: #FC0 -1px -1px 0px, #FC0 1px 1px 0px;	}
-	to { 	text-shadow: none;	}
-  }
+@keyframes slide-in {
+	from { 
+		right: -50%; 
+		opacity: 0;	
+	}
+	to { 
+		right: 0%; 
+		opacity: 1; 
+	}
+}
+
+@keyframes text-collapse {
+	from { 
+		width: 100%;
+	}
+	to { 
+		width: 0%;
+	}
+}
