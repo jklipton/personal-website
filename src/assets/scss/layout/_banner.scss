@@ -6,23 +6,10 @@
 
 /* Banner */
 
-	#banner {
-		// background image positioning
-		@include breakpoint(large) {}
-		@include breakpoint(medium) { background-position-x: 80%; }
-		@include breakpoint(small) { background-position-x: 65%; }
-		@include breakpoint(xsmall) { background-position-x: 60%; }
-
-
+	#banner {		
 		@include vendor('align-items', 'center');
-		@include vendor('background-image', 'url("../images/banner.png")');
 		@include vendor('display', 'flex');
 		justify-content: flex-end;
-		background-attachment: fixed;
-		background-position-x: right;
-		background-repeat: no-repeat;
-		background-color: _palette(bg);
-		background-size: cover;
 		border-bottom: 0 !important;
 		cursor: default;
 		height: 65vh;
@@ -30,20 +17,32 @@
 		position: relative;
 		top: -3.25em;
 
-		&:after {
-			@include vendor('transition', 'opacity #{_duration(banner)} ease');
-			@include vendor('transition-delay', '0.75s');
-			@include vendor('pointer-events', 'none');
-			background-color: _palette(banner-accent);
-			content: '';
-			display: block;
+		.banner-image {
+			position: relative;
 			height: 100%;
-			left: 0;
-			opacity: 0.6;
-			position: absolute;
-			top: 0;
 			width: 100%;
-			z-index: 1;
+			@include vendor('background-image', 'url("../images/banner.png")');
+			background-attachment: fixed;
+			background-position-x: center;
+			background-repeat: no-repeat;
+			background-color: _palette(bg);
+			background-size: cover;
+
+			&:after {
+				@include vendor('transition', 'opacity #{_duration(banner)} ease');
+				@include vendor('transition-delay', '0.75s');
+				@include vendor('pointer-events', 'none');
+				background-color: _palette(banner-accent);
+				content: '';
+				display: block;
+				height: 100%;
+				left: 0;
+				opacity: 0.6;
+				position: absolute;
+				top: 0;
+				width: 100%;
+				z-index: 1;
+			}
 		}
 
 		h1 {
@@ -138,61 +137,17 @@
 		&.style6 { &:after { background-color: _palette(accent6); } }
 
 		.body.is-loading & {
-			&:after {
+			&.banner-image:after {
 				opacity: 1.0;
 			}
 
 			> .inner {
-				@include vendor('filter', 'blur(0.125em)');
 				@include vendor('transform', 'translateX(-0.5em)');
 				@include vendor('width', '100%');
 			}
 		}
 
-		.typed {
-			& .gsap {
-				color: white;
-				display: inline-block;
-
-				& .word {
-					opacity: 0;
-				}
-
-				& .color-block{
-					display: inline-block;
-					width: 2.5em;
-					height: 1.5em;
-					position: absolute;
-					z-index: 5;
-					transform-origin: left;
-					transform: scaleX(0);
-				}
-
-				&.first {
-					& .color-block {
-						left: 0;
-						top: 0;
-					}
-				}
-
-				&.second {
-					& .color-block {
-						top: 0;
-						left: 2.3em;
-						width: 7em;
-					}
-
-					& .overlap {
-						position: absolute;
-						top: 0;
-						left: 2.5em;
-					}
-				}
-			}
-		}
-
 		@include breakpoint(small) {
-			@include padding(3em, 0, (2em, 0, 0, 0));
 			height: 50vh;
 			margin-bottom: -2.75em;
 			min-height: 40em;
@@ -202,7 +157,14 @@
 				font-size: 2em;
 			}
 
+			.banner-image {
+				position: absolute;
+			}
+
 			> .inner {
+				margin-top: 2em;
+				height: calc(100% - 2em);
+
 				.content {
 					display: block;
 
@@ -215,9 +177,10 @@
 		}
 
 		@include breakpoint(xsmall) {
-			@include padding(4em, 0, (2em, 0, 0, 0));
-
 			> .inner {
+				margin-top: 2em;
+				height: calc(100% - 2em);
+
 				.content {
 					p {
 						br {
@@ -225,10 +188,6 @@
 						}
 					}
 				}
-			}
-
-			&.major {
-				@include padding(6em, 0, (2em, 0, 0, 0));
 			}
 		}
 	}

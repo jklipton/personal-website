@@ -1,19 +1,19 @@
 import React from 'react'
-import Typed from './Typed'
-
+import { Link } from 'gatsby'
+  
 const Banner = (props) => (
     <section id="banner" className="major">
+        <div className="banner-image"/>
         <div className="inner">
             <header className="major">
                 <h1 className="dark">I am Jen Lipton.</h1>
             </header>
             <div className="content">
-                <p>A user-first Android and React developer,<br />
-                steeped in science, design, and customer service.</p>
+                <p>A user-first Android and React developer, steeped in science, design, and so many puppies.</p>
                 <ul className="actions">
-                    <li><a href="#one" className="button next scrolly slide-open">
+                    <li><Link to="/resume" className="button next scrolly slide-open">
                         <span className="fade-in slide-open">See my Resume</span>
-                    </a></li>
+                    </Link></li>
                     {/* TODO: link to resume, obviously */}
                 </ul>
             </div>

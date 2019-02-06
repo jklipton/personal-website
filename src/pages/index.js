@@ -4,27 +4,10 @@ import Helmet from 'react-helmet'
 import Layout from '../components/Layout'
 import Banner from '../components/Banner'
 import BlogTiles from '../components/BlogTiles'
-import Puppies from '../components/Puppies';
 
 class HomeIndex extends React.Component {
 
-    state = {
-        isPuppiesHappening: false
-    }
-    
-    togglePuppies() {
-        const { isPuppiesHappening: localPuppies } = this.state;
-        if (!localPuppies) this.activatePuppies();
-        this.setState({ isPuppiesHappening: localPuppies ? false : true })
-    }
-
-    activatePuppies() {
-
-    }
-
     render() {
-
-        const { isPuppiesHappening } = this.state; 
 
         return (
             <Layout>
@@ -38,8 +21,6 @@ class HomeIndex extends React.Component {
                 </Helmet>
 
                 <Banner/>
-
-                <Puppies active={isPuppiesHappening} />
 
                 <div id="main">
                         <BlogTiles />

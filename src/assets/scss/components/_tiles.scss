@@ -15,7 +15,14 @@
 			border-top: 0 !important;
 		}
 
+		.body.is-loading & {
+			& article::before {
+				opacity: 1.0;
+			}
+		}
+
 		article {
+			@include vendor('transition', ( 'opacity 1.5s ease' ));
 			@include vendor('align-items', 'center');
 			@include vendor('display', 'flex');
 			@include padding(4em, 4em);
@@ -59,8 +66,9 @@
 				z-index: 4;
 			}
 
-			&:before {
-				@include vendor('transition', 'opacity 0.5s ease');
+			&:before {				
+				@include vendor('transition', 'opacity #{_duration(banner)} ease');
+				@include vendor('transition-delay', '0.75s');
 				bottom: 0;
 				content: '';
 				display: block;
@@ -86,14 +94,13 @@
 
 			&:hover {
 				&:before {
-					opacity: 0;
+					opacity: 1;
 				}
 			}
 
 			&.is-transitioning {
 				@include vendor('transform', 'scale(0.95)');
 				@include vendor('filter', 'blur(0.5em)');
-				opacity: 0;
 			}
 
 			&:nth-child(4n - 1),
