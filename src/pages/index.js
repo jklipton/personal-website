@@ -29,7 +29,7 @@ class HomeIndex extends React.Component {
         return (
             <Layout>
                 <Helmet
-                    title="Gatsby Starter - Forty"
+                    title="Jen Lipton, Developer Page"
                     meta={[
                         { name: 'description', content: 'Sample' },
                         { name: 'keywords', content: 'sample, something' },
@@ -44,7 +44,9 @@ class HomeIndex extends React.Component {
                 <div id="main">
                         <BlogTiles />
                     <section id="two">
-                            <Link to="/landing" className="detail next">To Archives</Link>
+                            <span className="archives">
+                                <Link to="/landing" className="detail next">To Archives</Link>
+                            </span>
                     </section>
                 </div>
 

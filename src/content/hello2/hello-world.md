@@ -5,6 +5,7 @@ date: '2015-05-01T22:12:03.284Z'
 type: 'projects'
 description: 'Hello world post'
 tilePic: './pic03.jpg'
+keywords: []
 ---
 
 This is my first post on my new fake blog! How exciting!

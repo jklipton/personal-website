@@ -7,17 +7,25 @@
 /* Banner */
 
 	#banner {
+		// background image positioning
+		@include breakpoint(large) {}
+		@include breakpoint(medium) { background-position-x: 80%; }
+		@include breakpoint(small) { background-position-x: 65%; }
+		@include breakpoint(xsmall) { background-position-x: 60%; }
+
+
 		@include vendor('align-items', 'center');
 		@include vendor('background-image', 'url("../images/banner.png")');
 		@include vendor('display', 'flex');
-		@include padding(4em, 0, (2em, 0, 0, 0));
+		justify-content: flex-end;
 		background-attachment: fixed;
-		background-position: center;
+		background-position-x: right;
 		background-repeat: no-repeat;
+		background-color: _palette(bg);
 		background-size: cover;
 		border-bottom: 0 !important;
 		cursor: default;
-		height: 100vh;
+		height: 65vh;
 		margin-bottom: -3.25em;
 		position: relative;
 		top: -3.25em;
@@ -26,7 +34,7 @@
 			@include vendor('transition', 'opacity #{_duration(banner)} ease');
 			@include vendor('transition-delay', '0.75s');
 			@include vendor('pointer-events', 'none');
-			background-color: _palette(bg);
+			background-color: _palette(banner-accent);
 			content: '';
 			display: block;
 			height: 100%;
@@ -48,15 +56,18 @@
 				'opacity 1.5s ease',
 				'transform 0.5s ease-out',
 				'filter 0.5s ease',
-				'-webkit-filter 0.5s ease'
+				'-webkit-filter 0.5s ease',
+				'width 1.5s ease'
 			));
-			padding: 0 !important;
+			@include vendor('display', 'flex');
+			flex-direction: column;
+			justify-content: center;
+			padding: 0 2em !important;
 			position: relative;
+			width: 70%;
+			height: 100%;
+			background-color: _palette(fg);
 			z-index: 2;
-
-			.image {
-				display: none;
-			}
 
 			header {
 				width: auto;
@@ -134,35 +145,50 @@
 			> .inner {
 				@include vendor('filter', 'blur(0.125em)');
 				@include vendor('transform', 'translateX(-0.5em)');
-				opacity: 0;
+				@include vendor('width', '100%');
 			}
 		}
 
 		.typed {
-			& .first {
+			& .gsap {
+				color: white;
 				display: inline-block;
-				background-color: blue;
-			}
 
-			& .word {
-				opacity: 0;
-			}
+				& .word {
+					opacity: 0;
+				}
 
-			& .color-block{
-				display: inline-block;
-				width: 3em;
-				height: 2em;
-				position: absolute;
-				left: 0;
-				top: 0;
-				z-index: 5;
-				transform-origin: left;
-				transform: scaleX(0);
-			}
-		}
+				& .color-block{
+					display: inline-block;
+					width: 2.5em;
+					height: 1.5em;
+					position: absolute;
+					z-index: 5;
+					transform-origin: left;
+					transform: scaleX(0);
+				}
 
-		@include breakpoint(large) {
-			background-attachment: scroll;
+				&.first {
+					& .color-block {
+						left: 0;
+						top: 0;
+					}
+				}
+
+				&.second {
+					& .color-block {
+						top: 0;
+						left: 2.3em;
+						width: 7em;
+					}
+
+					& .overlap {
+						position: absolute;
+						top: 0;
+						left: 2.5em;
+					}
+				}
+			}
 		}
 
 		@include breakpoint(small) {

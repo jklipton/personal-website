@@ -1,10 +1,11 @@
 ---
-path: "/talks/wwc-iot-hackathon"
+path: "/posts/wwc-iot-hackathon"
 title: WWC IoT Hackathon 2018
 date: '2018-03-01T22:12:03.284Z'
-type: 'other'
+type: 'event'
 description: 'we won an award'
 tilePic: './wwcbanner.png'
+keywords: []
 ---
 
 This is my first post on my new fake blog! How exciting!

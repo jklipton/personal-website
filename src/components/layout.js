@@ -1,6 +1,4 @@
 import React from 'react'
-import Header from './Header'
-import Menu from './Menu'
 import Footer from './Footer'
 
 import '../assets/scss/main.scss'
@@ -39,11 +37,9 @@ class Layout extends React.Component {
         return (
             <div className={`body ${this.state.loading} ${this.state.isMenuVisible ? 'is-menu-visible' : ''}`}>
                 <div id="wrapper">
-                    <Header onToggleMenu={this.handleToggleMenu} />
                     {children}
                     <Footer />
                 </div>
-                <Menu onToggleMenu={this.handleToggleMenu} />
             </div>
         )
     }

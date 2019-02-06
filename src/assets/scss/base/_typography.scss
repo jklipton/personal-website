@@ -4,9 +4,9 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
-@include font-face("Mopster", "../fonts/Mopster-Regular", null, null, otf);
-@include font-face("Adams", "../fonts/Adamas-Regular", null, null, otf);
-
+//@include font-face("Mopster", "../fonts/Mopster-Regular", null, null, otf);
+//@include font-face("Adams", "../fonts/Adamas-Regular", null, null, otf);
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,400i,800,800i');
 
 /* Type */
 
@@ -29,6 +29,10 @@
 		@include breakpoint(xxsmall) {
 			font-size: 11pt;
 		}
+	}
+
+	#two, footer {
+		color: _palette(fg-dark);
 	}
 
 	a {
@@ -76,11 +80,15 @@
 	}
 
 	h1 {
-		font-family: 'Mopster', cursive;
-		text-transform: uppercase;
+		color: _palette(fg-light);
+		font-family: 'Raleway', sans-serif;
 		font-size: 2.5em;
-		font-weight: 200 !important;
+		font-weight: 800 !important;
 		width: unset !important;
+	}
+
+	#banner {
+		color: _palette(fg-light);
 	}
 
 	h2 {

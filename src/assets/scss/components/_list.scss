@@ -43,7 +43,9 @@
 		&.icons {
 			cursor: default;
 			list-style: none;
+			margin: auto;
 			padding-left: 0;
+			width: fit-content;
 
 			li {
 				display: inline-block;

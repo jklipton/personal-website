@@ -7,14 +7,17 @@
 /* Footer */
 
 	#footer {
+
 		.copyright {
 			font-size: 0.8em;
 			list-style: none;
 			padding-left: 0;
+			width: fit-content;
+			margin: 1em auto;
 
 			li {
 				border-left: solid 1px _palette(border);
-				color: _palette(fg-light);
+				color: _palette(fg-dark);
 				display: inline-block;
 				line-height: 1;
 				margin-left: 1em;
