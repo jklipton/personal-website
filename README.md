@@ -1,4 +1,4 @@
-# gatsby-starter-forty
+<!-- # gatsby-starter-forty
 
 **This is a starter for Gatsby.js V2.**
 
@@ -36,4 +36,4 @@ Here is an example of using the grid, for a 3 column layout:
         <p>Content Here</p>
     </div>
 </div>
-```
+``` -->
