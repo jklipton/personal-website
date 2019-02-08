@@ -17,16 +17,22 @@
 		position: relative;
 		top: -3.25em;
 
-		.banner-image {			
+		.banner-image-container {
 			position: relative;
 			height: 100%;
 			width: 100%;
-			@include vendor('background-image', 'url("../images/banner.png")');
-			background-attachment: fixed;
-			background-position: center;
-			background-repeat: no-repeat;
-			background-color: _palette(bg);
-			background-size: cover;
+
+			.banner-image {			
+				height: 100%;
+				width: 100%;
+
+				&:after{
+					background-attachment: fixed;
+					background-position: -35vw;
+					background-repeat: no-repeat;
+					background-size: cover;
+				}
+			}
 
 			&:after {
 				@include vendor('transition', 'opacity #{_duration(banner)} ease');
@@ -137,7 +143,7 @@
 		&.style6 { &:after { background-color: _palette(accent6); } }
 
 		.body.is-loading & {
-			& .banner-image:after {
+			& .banner-image-container:after {
 				opacity: 1.0;
 			}
 
@@ -145,6 +151,20 @@
 				@include vendor('transform', 'translateX(-0.5em)');
 				@include vendor('width', '100%');
 			}
+		}
+
+		@include breakpoint(xlarge) {
+			.banner-image-container {
+				.banner-image:after { background-position: -25vw; }
+			}
+		}
+
+		@include breakpoint(medium) {
+			.banner-image-container {
+				.banner-image:after { background-position: 75%; }
+			}
+
+			> .inner { width: 120% }
 		}
 
 		@include breakpoint(small) {
@@ -157,9 +177,14 @@
 				font-size: 2em;
 			}
 
-			.banner-image {
-				position: absolute;
-				background-position: 60%;
+			.banner-image-container{
+			 	.banner-image {
+					position: absolute;
+
+					&:after {
+						background-position: 60%;
+					}
+				}
 			}
 
 			> .inner {

@@ -5,6 +5,7 @@
   "author": "Jennifer Lipton",
   "dependencies": {
     "gatsby": "^2.0.11",
+    "gatsby-cli": "^2.4.9",
     "gatsby-plugin-feed": "^2.0.8",
     "gatsby-plugin-google-analytics": "^2.0.5",
     "gatsby-plugin-manifest": "^2.0.9",
@@ -34,6 +35,7 @@
   "devDependencies": {
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.11.1",
+    "gatsby-background-image": "^0.2.3",
     "gatsby-image": "^2.0.25",
     "gatsby-plugin-sharp": "^2.0.17",
     "gatsby-remark-copy-linked-files": "^2.0.8",

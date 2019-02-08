@@ -1,9 +1,13 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import BannerImage from './BannerImage'
   
 const Banner = (props) => (
     <section id="banner" className="major">
-        <div className="banner-image"/>
+        {/* <div className="banner-image"/> */}
+        <div className="banner-image-container">
+            <BannerImage className='banner-image'/>
+        </div>
         <div className="inner">
             <header className="major">
                 <h1 className="dark">I am Jen Lipton.</h1>

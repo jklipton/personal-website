@@ -6,8 +6,6 @@ import { Document, Page, pdfjs } from 'react-pdf';
 import resume from '../assets/resume/02:19.pdf'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
-console.log(resume);
-
   
 const Resume = (props) => (
     <Layout>
