@@ -37,7 +37,8 @@ export default function BlogTiles() {
                                     <h3>{node.frontmatter.title}</h3>
                                     <p>{node.frontmatter.description}</p>
                                 </header>
-                                <Link to={node.frontmatter.path} className="link primary"></Link>
+                                <Link to="/wip" className="link primary"></Link>
+                                {/* <Link to={node.frontmatter.path} className="link primary"></Link> */}
                             </article>
                         )
                     })}

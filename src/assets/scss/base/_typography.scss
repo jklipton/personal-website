@@ -212,3 +212,11 @@
 	.one-line {
 		display: inline-block;
 	}
+
+	.dark {
+		color: _palette(fg-light);
+	}
+
+	.light {
+		color: _palette(fg-light);
+	}

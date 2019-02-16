@@ -1,6 +1,6 @@
 ---
 path: "/posts/why-bootcamp"
-title: Why I Loved My "Bootcamp"
+title: Why I Loved "Bootcamp"
 date: '2018-07-03T22:12:03.284Z'
 type: 'post'
 description: 'When code school is done well, the entire industry should take notice.'

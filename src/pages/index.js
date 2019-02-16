@@ -26,7 +26,7 @@ class HomeIndex extends React.Component {
                         <BlogTiles />
                     <section id="two">
                             <span className="archives">
-                                <Link to="/blog" className="detail next">To Archives</Link>
+                                {/* <Link to="/blog" className="detail next">To Archives</Link> */}
                             </span>
                     </section>
                 </div>

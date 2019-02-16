@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import { Link } from 'gatsby'
 import Layout from '../components/Layout'
 import { Document, Page, pdfjs } from 'react-pdf';
-import resume from '../assets/resume/02:19.pdf'
+import resume from '../assets/resume/Jlipton02-19.pdf'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
   

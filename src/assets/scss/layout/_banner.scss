@@ -25,13 +25,6 @@
 			.banner-image {			
 				height: 100%;
 				width: 100%;
-
-				&:after{
-					background-attachment: fixed;
-					background-position: -35vw;
-					background-repeat: no-repeat;
-					background-size: cover;
-				}
 			}
 
 			&:after {
@@ -153,17 +146,7 @@
 			}
 		}
 
-		@include breakpoint(xlarge) {
-			.banner-image-container {
-				.banner-image:after { background-position: -25vw; }
-			}
-		}
-
 		@include breakpoint(medium) {
-			.banner-image-container {
-				.banner-image:after { background-position: 75%; }
-			}
-
 			> .inner { width: 120% }
 		}
 

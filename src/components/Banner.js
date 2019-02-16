@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import BannerImage from './BannerImage'
-  
+import { graphql, StaticQuery } from 'gatsby'
+import Img from "gatsby-image"
+
 const Banner = (props) => (
     <section id="banner" className="major">
-        {/* <div className="banner-image"/> */}
         <div className="banner-image-container">
             <BannerImage className='banner-image'/>
         </div>
@@ -18,29 +18,36 @@ const Banner = (props) => (
                     <li><Link to="/resume" className="button next scrolly slide-open">
                         <span className="fade-in slide-open">See my Resume</span>
                     </Link></li>
-                    {/* TODO: link to resume, obviously */}
                 </ul>
             </div>
         </div>
     </section>
 );
 
-function handleEmoji({ target }){
-    switch(target.classList[1]){
-        case "tea": 
-            target.classList.add('tea-now')
-            break;
-        case "sci":
-            target.classList.add('sci-now')
-            break;
-        case "des":
-            target.classList.add('des-now')
-            break;
-        case "cus":
-            target.classList.add('cus-now')
-            break;
-    }
-}
-
 export default Banner
 
+const BannerImage = ({ className }) => (
+    <StaticQuery query={graphql`
+      query {
+        desktop: file(relativePath: { eq: "optimized-images/banner.png" }) {
+          childImageSharp {
+            fluid(quality: 90, maxWidth: 4160) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `}
+     render={data => {
+       // Set ImageData.
+       const imageData = data.desktop.childImageSharp.fluid
+       return (
+          <Img Tag="div"
+              className={className}
+              fluid={imageData}
+          />
+       )
+     }
+     }
+    />
+)
