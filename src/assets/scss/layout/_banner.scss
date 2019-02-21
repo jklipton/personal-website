@@ -6,7 +6,7 @@
 
 /* Banner */
 
-	#banner {		
+	#banner, .blog-banner {		
 		@include vendor('align-items', 'center');
 		@include vendor('display', 'flex');
 		justify-content: flex-end;
@@ -27,21 +27,7 @@
 				width: 100%;
 			}
 
-			&:after {
-				@include vendor('transition', 'opacity #{_duration(banner)} ease');
-				@include vendor('transition-delay', '0.75s');
-				@include vendor('pointer-events', 'none');
-				background-color: _palette(banner-accent);
-				content: '';
-				display: block;
-				height: 100%;
-				left: 0;
-				opacity: 0.6;
-				position: absolute;
-				top: 0;
-				width: 100%;
-				z-index: 1;
-			}
+			@include banner-effect
 		}
 
 		h1 {
@@ -94,7 +80,7 @@
 				}
 
 				p {
-					font-size: 0.7em;
+					font-size: 0.8em;
 					font-weight: _font(weight-bold);
 					letter-spacing: _font(letter-spacing-alt);
 					text-transform: uppercase;
@@ -115,6 +101,18 @@
 						&.tea-now {
 							overflow: hidden;
 							animation: text-collapse 1.8s forwards
+						}
+					}
+
+					&.display {
+						font-size: 1em;
+				
+						@include breakpoint(large) {
+							font-size: 0.9em;
+						}
+				
+						@include breakpoint(small) {
+							font-size: 0.8em;
 						}
 					}
 

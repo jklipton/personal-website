@@ -16,7 +16,7 @@ export default function BlogTiles() {
                               title
                               path
                               description
-                              tilePic {
+                              cover {
                                   childImageSharp{
                                       sizes(maxWidth:640) {
                                           ...GatsbyImageSharpSizes
@@ -32,13 +32,12 @@ export default function BlogTiles() {
             <section id="one" className="tiles transition-slide">
                     { allMarkdownRemark.edges.map(({ node }, i) => {
                         return (
-                            <article key={i} style={{backgroundImage: `url(${node.frontmatter.tilePic.childImageSharp.sizes.src})`}}>
+                            <article key={i} style={{backgroundImage: `url(${node.frontmatter.cover.childImageSharp.sizes.src})`}}>
                                 <header className="major">
                                     <h3>{node.frontmatter.title}</h3>
                                     <p>{node.frontmatter.description}</p>
                                 </header>
-                                <Link to="/wip" className="link primary"></Link>
-                                {/* <Link to={node.frontmatter.path} className="link primary"></Link> */}
+                                <Link to={node.frontmatter.path} className="link primary"></Link>
                             </article>
                         )
                     })}

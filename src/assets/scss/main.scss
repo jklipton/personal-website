@@ -43,6 +43,25 @@
 		}
 	}
 
+	@mixin banner-effect {
+		&:after {
+			@include vendor('transition', 'opacity #{_duration(banner)} ease');
+			@include vendor('transition-delay', '0.75s');
+			@include vendor('pointer-events', 'none');
+			background-color: _palette(banner-accent);
+			content: '';
+			display: block;
+			height: 100%;
+			left: 0;
+			opacity: 0.6;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			z-index: 1;
+		}
+	}
+	
+
 // Base.
 
 	@import 'base/page';
@@ -69,5 +88,5 @@
 	@import 'layout/main';
 	@import 'layout/footer';
 	@import 'layout/wrapper';
-	@import 'layout/menu';
 	@import 'layout/resume';
+	@import 'layout/posts';
