@@ -13,12 +13,12 @@ Borking doggo blop boofers very good spot, thicc doggorino. tungg lotsa pats pat
 
 [salted duck eggs](http://en.wikipedia.org/wiki/Salted_duck_egg).
 
-> Tungg aqua doggo you are doing me the shock, doge. Borkf much ruin diet shoob the neighborhood pupper very 
-> hand that feed shibe long water shoob, super chub long doggo boofers. Most angery pupper I have ever seen much 
-> ruin diet very taste wow wow such tempt tungg, boofers ur givin me a spook. Big ol very good spot wow such tempt 
-> blop heckin pupperino h*ck corgo heckin, boofers smol borking doggo with a long snoot for pats adorable doggo 
-> shoob stop it fren super chub. I am bekom fat dat tungg tho bork pats vvv, what a nice floof noodle horse. Smol 
-> borking doggo with a long snoot for pats lotsa pats big ol pupper big ol what a nice floof, very hand that feed
+> Tungg aqua doggo you are doing me the shock, doge. Borkf much ruin diet shoob the neighborhood pupper very
+> hand that feed shibe long water shoob, super chub long doggo boofers. Most angery pupper I have ever seen much
+> ruin diet very taste wow wow such tempt tungg, boofers ur givin me a spook. Big ol very good spot wow such tempt
+> blop heckin pupperino h*ck corgo heckin, boofers smol borking doggo with a long snoot for pats adorable doggo
+> shoob stop it fren super chub. I am bekom fat dat tungg tho bork pats vvv, what a nice floof noodle horse. Smol
+> borking doggo with a long snoot for pats lotsa pats big ol pupper big ol what a nice floof, very hand that feel
 > shibe lotsa pats.
 
 ![Chinese Salty Egg](./puppy.jpg)
