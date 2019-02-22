@@ -30,16 +30,16 @@ const UnderConstructionImg = ({ className }) => (
         }
       }
     `}
-     render={data => {
-       // Set ImageData.
-       const imageData = data.desktop.childImageSharp.fluid
-       return (
-          <Img Tag="div"
-              className={className}
-              fluid={imageData}
-          />
-       )
-     }
+      render={data => {
+        // Set ImageData.
+        const imageData = data.desktop.childImageSharp.fluid
+        return (
+            <Img Tag="div"
+                className={className}
+                fluid={imageData}
+            />
+        )
+      }
      }
     />
 )

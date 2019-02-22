@@ -2,10 +2,9 @@
 path: "/posts/why-bootcamp"
 title: Why I Loved "Bootcamp"
 date: '2018-07-03T22:12:03.284Z'
-tags: ['article', 'bootcamp']
 description: 'When code school is done well, the entire industry should take notice.'
 cover: './go-jen.jpg'
-keywords: ['bootcamp', 'code school', 'learn javascript', 'tech', 'alchemy code lab']
+tags: ['bootcamp', 'code school', 'learn javascript', 'tech', 'alchemy code lab']
 ---
 
 My career counselor was the first person to tell me that I should never call my code school a "Bootcamp," but she wasn't the last.  

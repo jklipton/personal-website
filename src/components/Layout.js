@@ -46,5 +46,3 @@ class Layout extends React.Component {
 }
 
 export default Layout
-
-//TODO: Refactor to match pattern

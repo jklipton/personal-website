@@ -6,6 +6,21 @@ module.exports = {
     description: "Home page for Jen Lipton, developer, containing information on her work, talks, and articles"
   },
   plugins: [
+    {
+      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
+      options: {
+        fields: [
+          'title',
+          'tags',
+        ],
+        resolvers: {
+          MarkdownRemark: {
+              title: node => node.frontmatter.title,
+              tags: node => node.frontmatter.tags,
+          },
+        },
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-manifest`,

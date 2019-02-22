@@ -8,22 +8,6 @@ const TweenComponent = () => (
 import React from 'react';
 import { Tween, Timeline } from 'react-gsap';
 
-// const Typed = (props) => (
-//     <h1 className="typed">
-//         {'I am '}
-//         <Typing className="one-line" speed={80} startDelay={1500} hideCursor={true}>
-//             {'a developer'}
-//             <Typing.Backspace count={9} delay={1000}/>
-//             {'designer'}
-//             <Typing.Backspace count={10} delay={1000}/>
-//             {'Jen Lipton.'}
-//         </Typing>
-//     </h1>
-// );
-
-// export default Typed;
-
-
 const ColorBlock = ( color ) => (<span className="color-block" style={{ backgroundColor: `${color}` }}/>);
 const TextBlock = ( string, className = "" ) => (<span className={`word ${className}`}>{string}</span>);
 

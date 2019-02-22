@@ -2,10 +2,9 @@
 path: "/posts/wwc-iot-hackathon"
 title: WWC IoT Hackathon 2018
 date: '2018-03-01T22:12:03.284Z'
-tags: ['article', 'bootcamp']
 description: 'When code school is done well, the entire industry should take notice.'
 cover: './wwcbanner.png'
-keywords: ['bootcamp', 'code school', 'learn javascript', 'tech', 'alchemy code lab']
+tags: ['bootcamp', 'code school', 'learn javascript', 'tech', 'alchemy code lab']
 ---
 
 This is my first post on my new fake blog! How exciting!
