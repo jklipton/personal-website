@@ -8,24 +8,7 @@
 
 #blog-post {
     header.blog-banner {
-        nav.top-bar {
-            position: fixed;
-            top: .8em;
-            right: .8em;
-            z-index: 2;
-            background-color: #ffffff;
-            border-radius: .125em;
-            padding: .1em .8em;
-
-            > .home-link {
-                color: _palette(fg-light);
-                border-bottom: none;
-                font-size: 2em;
-
-                @include icon;
-            }
-
-        }
+        min-height: 25em;
 
         .post-banner {
             position: absolute !important;

@@ -16,6 +16,7 @@
 		margin-bottom: -3.25em;
 		position: relative;
 		top: -3.25em;
+		min-height: 25em;
 
 		.banner-image-container {
 			position: relative;
@@ -80,7 +81,7 @@
 				}
 
 				p {
-					font-size: 0.8em;
+					font-size: 0.7em;
 					font-weight: _font(weight-bold);
 					letter-spacing: _font(letter-spacing-alt);
 					text-transform: uppercase;

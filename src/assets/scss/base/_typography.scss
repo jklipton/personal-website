@@ -44,7 +44,7 @@
 
 		&:hover {
 			border-bottom-color: transparent;
-			color: _palette(highlight) !important;
+			color: _palette(highlight);
 		}
 
 		&:active {
@@ -110,6 +110,7 @@
 	}
 
 	h4 {
+		text-transform: uppercase;
 		font-size: 1.1em;
 	}
 

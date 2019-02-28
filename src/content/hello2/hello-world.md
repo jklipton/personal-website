@@ -4,7 +4,7 @@ title: Hello Mundo
 date: '2015-05-01T22:12:03.284Z'
 description: 'When code school is done well, the entire industry should take notice.'
 cover: './pic03.jpg'
-tags: ['bootcamp', 'code school', 'learn javascript', 'tech', 'alchemy code lab']
+tags: ['worldwide', 'friends', 'puppies', 'testing', 'alchemy code lab']
 ---
 
 Noodle horse boofers fat boi big ol pupper doge, long woofer doggo floofs. Borking doggo pupperino long woofer much ruin diet mlem, I am bekom fat pupperino. Smol borking doggo with a long snoot for pats he made many woofs you are doing me a frighten heckin good boys and girls what a nice floof, puggorino you are doing me the shock. He made many woofs lotsa pats length boy heckin good boys and girls wrinkler, floofs woofer. maximum borkdrive borking doggo. Fat boi wrinkler stop it fren, shooberino. Ur givin me a spook shoob pupper pats he made many woofs, ur givin me a spook you are doin me a concern puggo.

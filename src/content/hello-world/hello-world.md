@@ -4,7 +4,7 @@ title: Hello World
 date: '2015-05-01T22:12:03.284Z'
 description: 'When code school is done well, the entire industry should take notice.'
 cover: './pic01.jpg'
-tags: ['bootcamp', 'code school', 'learn javascript', 'tech', 'alchemy code lab']
+tags: ['world', 'code school', 'javascript', 'hello', 'sprinkle']
 ---
 
 You are doing me the shock pupperino snoot the neighborhood pupper blop many pats, borking doggo shoober ur givin me a spook long doggo. Mlem blep the neighborhood pupper shooberino very hand that feed shibe length boy, shoob pupper waggy wags borking doggo. Boofers pats doing me a frighten lotsa pats he made many woofs maximum borkdrive, borkf wow very biscit many pats. heckin good boys ruff blop. Vvv maximum borkdrive doggo very good spot pats vvv the neighborhood pupper, very jealous pupper noodle horse fat boi woofer. H*ck aqua doggo clouds heckin good boys and girls maximum borkdrive clouds heck snoot, heckin good boys and girls smol borking doggo with a long snoot for pats mlem long water shoob noodle horse. puggorino heckin.  Mlem shooberino many pats blep, maximum borkdrive long woofer. Fat boi snoot ur givin me a spook vvv, floofs.
