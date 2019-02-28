@@ -1,26 +1,19 @@
 module.exports = {
   pathPrefix: `/resume`,
   siteMetadata: {
-    title: "Jen Lipton Developer Page",
+    siteUrl: 'https://jklipton.io',
+    title: "JKL Frontend Development",
     author: "Jen Lipton",
-    description: "Home page for Jen Lipton, developer, containing information on her work, talks, and articles"
+    description: "Blog for Jen Lipton, developer, containing information on her work, talks, and articles",
+    keywords: [
+      'Software Engineer',
+      'Web Developer',
+      'Frontend Developer',
+      'React',
+      'Javascript'
+    ],
   },
   plugins: [
-    {
-      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
-      options: {
-        fields: [
-          'title',
-          'tags',
-        ],
-        resolvers: {
-          MarkdownRemark: {
-              title: node => node.frontmatter.title,
-              tags: node => node.frontmatter.tags,
-          },
-        },
-      },
-    },
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-manifest`,
@@ -37,20 +30,31 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-offline',
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-mdx`,
       options: {
-        plugins: [
+        extensions: ['.mdx', '.md'],
+        gatsbyRemarkPlugins: [
           {
-            resolve: `gatsby-remark-images`,
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 1035,
+              sizeByPixelDensity: true,
+            },
           },
-          'gatsby-remark-prismjs',
-          'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants'
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: 'language-',
+              inlineCodeMarker: null,
+              aliases: {},
+            },
+          },
         ],
       },
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    'gatsby-plugin-catch-links',
     {    
       resolve: `gatsby-source-filesystem`,
       options: {

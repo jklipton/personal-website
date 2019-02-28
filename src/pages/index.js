@@ -2,7 +2,8 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Layout from '../components/Layout'
 import Banner from '../components/Banner'
-import BlogTiles from '../components/BlogTiles'
+import { BlogTilesWithQuery } from '../components/BlogTiles'
+import MainPage from '../components/MainPage'
 
 class HomeIndex extends React.Component {
 
@@ -19,15 +20,7 @@ class HomeIndex extends React.Component {
                 />
 
                 <Banner/>
-
-                <div id="main">
-                        <BlogTiles />
-                    <section id="two">
-                            <span className="archives">
-                                {/* <Link to="/blog" className="detail next">To Archives</Link> */}
-                            </span>
-                    </section>
-                </div>
+                <MainPage />
 
             </Layout>
         )

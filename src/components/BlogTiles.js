@@ -1,48 +1,33 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { StaticQuery, graphql } from 'gatsby'
+import { Tags } from '../components/Tags'
 
-export default function BlogTiles() {
+const BlogTiles = ({ array , className }) => {
 
-    return (
-        <StaticQuery
-          query={graphql`
-          query mostRecentQuery {
-              allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date]}, limit: 4) {
-                  edges {
-                      node {
-                          excerpt
-                          frontmatter {
-                              title
-                              path
-                              description
-                              cover {
-                                  childImageSharp{
-                                      sizes(maxWidth:640) {
-                                          ...GatsbyImageSharpSizes
-                                      }
-                                  }
-                              }
-                          }
-                      }
-                  }
-              }
-          }`}
-          render={ ({ allMarkdownRemark }) => (
-            <section id="one" className="tiles transition-slide">
-                    { allMarkdownRemark.edges.map(({ node }, i) => {
-                        return (
-                            <article key={i} style={{backgroundImage: `url(${node.frontmatter.cover.childImageSharp.sizes.src})`}}>
-                                <header className="major">
-                                    <h3>{node.frontmatter.title}</h3>
-                                    <p>{node.frontmatter.description}</p>
-                                </header>
-                                <Link to={node.frontmatter.path} className="link primary"></Link>
-                            </article>
-                        )
-                    })}
-            </section>
-          )}
-        />
-      )
+    const isTagTile = className ? className.includes('tag') : false;
+
+    return array.map(({ node }, i) => {
+        return (
+            <article 
+                key={i} 
+                className={className}
+                style={{backgroundImage: `url(${node.frontmatter.cover.childImageSharp.sizes.src})`}}
+            >
+                <header className="major">
+                    <h3>{node.frontmatter.title}
+                        {isTagTile && (
+                            <span className="time-to-read">
+                                { `${node.timeToRead} min read` }
+                            </span>
+                        )}
+                    </h3>
+                    <p>{node.frontmatter.description}</p>
+                    {isTagTile && <Tags tags={node.frontmatter.tags}/>}
+                </header>
+                <Link to={node.frontmatter.path} className="link primary"></Link>
+            </article>
+        )
+    })
 };
+
+export default BlogTiles;

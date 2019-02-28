@@ -2,17 +2,18 @@
 import SEO from '../components/Seo'
 import React from "react"
 import { graphql } from "gatsby"
-import { Link } from 'gatsby'
+import HomeButton from '../components/HomeButton'
 import Layout from '../components/Layout'
 import Helmet from 'react-helmet'
 import Img from "gatsby-image"
+import MDXRenderer from 'gatsby-mdx/mdx-renderer';
+import { Tags } from '../components/Tags'
 
 // TODO: implement SEO
 
-export default function Template({ data }) {
-  const { markdownRemark } = data
-  const { frontmatter, html } = markdownRemark
-  
+export default function Template({ data: { mdx }}) {
+  const { frontmatter, html } = mdx;
+
   return (
     <Layout>
       <Helmet
@@ -25,9 +26,7 @@ export default function Template({ data }) {
 
       <div id="blog-post">
         <header className="blog-banner">
-          <nav className="top-bar">
-            <Link className="home-link icon fa-home" to="/"/>
-          </nav>
+          <HomeButton/>
           <Img
               className="post-banner"
               fluid={frontmatter.cover.childImageSharp.fluid}/>
@@ -36,27 +35,30 @@ export default function Template({ data }) {
               <h1 className="light">{frontmatter.title}</h1>
             </header>
             <div className="content">
-              <p className="display"><h3 className="light signature">Jen Lipton,</h3> on {frontmatter.date}</p>
-              {/* Tags here */}
+              <p className="display">by <span className="light signature">Jen Lipton,</span> on {frontmatter.date}</p>
               <p className="display">{frontmatter.description}</p>
             </div>
           </div>
         </header>
 
         <article className="dark">
-          <div 
-            className="inner"
-            dangerouslySetInnerHTML={{ __html: html }} />
+          <div className="inner" >
+            <MDXRenderer >{mdx.code.body}</MDXRenderer>
+          </div>
         </article>
+
+        <Tags tags={mdx.frontmatter.tags} title={ 'View related articles by topic:'}/>
       </div>
     </Layout>
   )
 }
 
 export const pageQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
+  query($id: String!) {
+    mdx(fields: { id: { eq: $id } }) {
+      code {
+        body
+      }
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         path

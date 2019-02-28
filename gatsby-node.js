@@ -2,11 +2,14 @@ const path = require('path');
 const PAGINATION_OFFSET = 4;
 
 const blogPostTemplate = path.resolve(`src/templates/blog-post.js`)
+const tagPostTemplate = path.resolve(`src/templates/tag-page.js`)
+
+const componentWithMDXScope = require('gatsby-mdx/component-with-mdx-scope');
 
 const pluckTags = edges =>
   Object.keys(
     edges.reduce((acc, value) => {
-      value.node.frontmatter.tags.forEach(tag => {
+      value.node.fields.tags.forEach(tag => {
         if (!acc[tag]) {
           acc[tag] = tag;
         }
@@ -18,7 +21,7 @@ const pluckTags = edges =>
 
 const groupByTag = edges =>
   edges.reduce((acc, value) => {
-    value.node.frontmatter.tags.forEach(tag => {
+    value.node.fields.tags.forEach(tag => {
       if (!acc[tag]) {
         acc[tag] = [];
       }
@@ -47,20 +50,23 @@ const createPosts = (createPage, edges) => {
     const next = i === edges.length - 1 ? null : edges[i + 1].node;
 
     createPage({
-      path: node.frontmatter.path,
-      component: blogPostTemplate,
+      path: node.fields.path,
+      component: componentWithMDXScope(
+        blogPostTemplate,
+        node.code.scope,
+        __dirname,
+      ),      
       context: { 
         id: node.id,
         prev, 
         next
-      }, //ADD PREV NEXT
+      },
     });
   });
 };
 
 const createBlog = (createPage, edges) => {
   const tags = pluckTags(edges);
-
   createPaginatedPages(createPage, edges, '/', { tags });
 };
 
@@ -94,8 +100,8 @@ const createPaginatedPages = (
     }
 
     createPage({
-      path: index > 0 ? `${pathPrefix}/${index}` : `${pathPrefix}`, //PATH PREFIX?
-      component: blogPostTemplate,
+      path: index > 0 ? `${pathPrefix}/${index}` : `${pathPrefix}`,
+      component: tagPostTemplate, 
       context: {
         pagination: {
           page,
@@ -113,77 +119,83 @@ const createPaginatedPages = (
 
 exports.createPages = ({ actions, graphql }) =>
   graphql(`
-    {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
-        edges {
-          node {
-            id
-            frontmatter {
-              title
-              date
-              description
-              path
-              tags
-            }
+  query {
+    allMdx(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          id
+          excerpt(pruneLength: 250)
+          fields {
+            title
+            path
+            tags
+          }
+          timeToRead
+          code {
+            scope
           }
         }
       }
     }
-  `).then(({ data, errors }) => {
+  }
+`).then(({ data, errors }) => {
   if (errors) {
     return Promise.reject(errors);
   }
 
-  const { edges } = data.allMarkdownRemark;
+  const { edges } = data.allMdx;
 
   createBlog(actions.createPage, edges);
   createPosts(actions.createPage, edges);
   createTagPages(actions.createPage, edges);
 });
 
-// exports.onCreateNode = ({ node, getNode, actions }) => {
-//   const { createNodeField } = actions;
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions;
 
-//   if (node.internal.type === `allMarkdownRemark`) {
-//     const parent = getNode(node.parent);
-      
-//     createNodeField({
-//       name: 'id',
-//       node,
-//       value: node.id,
-//     });
+  if (node.internal.type === `Mdx`) {
+    const parent = getNode(node.parent);
 
-//     createNodeField({
-//       name: 'path',
-//       node,
-//       value: node.path,
-//     });
+    createNodeField({
+      name: 'id',
+      node,
+      value: node.id,
+    });
 
-//     createNodeField({
-//       name: 'title',
-//       node,
-//       value: node.frontmatter.title,
-//     });
+    createNodeField({
+      name: 'title',
+      node,
+      value: node.frontmatter.title,
+    });
 
-//     createNodeField({
-//       name: 'date',
-//       node,
-//       value: node.frontmatter.date || '',
-//     });
+    createNodeField({
+      name: 'description',
+      node,
+      value: node.frontmatter.description,
+    });
 
-//     createNodeField({
-//       name: 'description',
-//       node,
-//       value: node.frontmatter.description,
-//     });
-    
-//     createNodeField({
-//       name: 'tags',
-//       node,
-//       value: node.frontmatter.tags || [],
-//     });
-//   }
-// };
+    createNodeField({
+      name: 'path',
+      node,
+      value: node.frontmatter.path,
+    });
+
+    createNodeField({
+      name: 'date',
+      node,
+      value: node.frontmatter.date || '',
+    });
+
+    createNodeField({
+      name: 'cover',
+      node,
+      banner: node.frontmatter.cover,
+    });
+
+    createNodeField({
+      name: 'tags',
+      node,
+      value: node.frontmatter.tags || [],
+    });
+  }
+};
