@@ -60,7 +60,6 @@
 			z-index: 1;
 		}
 	}
-	
 
 // Base.
 
@@ -70,16 +69,14 @@
 // Component.
 
 	@import 'components/section';
-	@import 'components/form';
-	@import 'components/box';
 	@import 'components/icon';
 	@import 'components/image';
 	@import 'components/list';
 	@import 'components/table';
 	@import 'components/button';
 	@import 'components/tiles';
-	@import 'components/contact-method';
-	@import 'components/spotlights';
+	@import 'components/homebutton';
+	@import 'components/tags';
 
 // Layout.
 
@@ -90,3 +87,4 @@
 	@import 'layout/wrapper';
 	@import 'layout/resume';
 	@import 'layout/posts';
+	@import 'layout/tag-page';
